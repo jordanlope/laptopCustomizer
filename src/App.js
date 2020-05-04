@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Summary from './Summary';
 import FeaturesForm from './FeaturesForm';
+import SummaryTotal from './SummaryTotal';
 
 import './App.css';
 
@@ -60,12 +61,9 @@ class App extends Component {
           <section className="main__summary">
             <h2>Your cart</h2>
             <Summary selected={this.state.selected} uscurrencyformat={USCurrencyFormat} />
-            <div className="summary__total">
-              <div className="summary__total__label">Total</div>
-              <div className="summary__total__value">
-                {USCurrencyFormat.format(total)}
-              </div>
-            </div>
+
+            {/* Summary Total Component */}
+            <SummaryTotal uscurrencyformat={USCurrencyFormat} total={total} />
           </section>
         </main>
       </div>
